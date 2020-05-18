@@ -1,0 +1,23 @@
+import time
+#excercise 1
+def secret_code():
+    word = input("Type word for scramble ")
+    if len(word) == 0:
+        return ""
+    output=""
+    for letters in word:
+        output = output + str(ord(letters)) + " "
+    print('code is: ',output)
+#excersise 2
+def adding_endings():
+    word = input("Give me word: ")
+    word = word.lower()
+    wording = ""
+    list_of_v = ["a", "e", "i", "o", "u"]
+    if len(word) >4 and word[-1] in ["a,","e"]:
+        wording = word[-1] + "ing"
+    elif len(word) >2 and word[-3] not in list_of_v and word[-2] in list_of_v and word[-1] not in list_of_v:
+        wording = word + word[-1] + "ing"
+    else:
+        wording = word + "ing"
+    print(wording)
